@@ -1,0 +1,6 @@
+fastapi==0.128.0
+matplotlib==3.10.8
+numpy==1.26.4
+opencv-python==4.13.0.90
+pydantic==2.12.5
+uvicorn==0.40.0
