@@ -45,7 +45,7 @@ async def predict(payload: dict):
     )
 
     # Preprocess
-    img = cv2.GaussianBlur(img, (5, 5), 0)
+    #img = cv2.GaussianBlur(img, (5, 5), 0)
 
     _, img = cv2.threshold(
         img,
@@ -85,14 +85,8 @@ async def predict(payload: dict):
 
     probs = softmax(Z3)
     print(int(np.argmax(probs)))
-
-    if probs[int(np.argmax(probs))]> 75:
-        return {
+    print(probs[0], np.argmax(probs))
+    return {
             "prediction": int(np.argmax(probs)),
             "probabilities": probs[0].tolist()
-        }
-    else:
-        return{
-            "prediction": -1,
-            "probabilities": []
-        }
+    }
