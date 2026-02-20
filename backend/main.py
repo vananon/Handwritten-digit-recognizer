@@ -73,8 +73,6 @@ async def predict(payload: dict):
         cv2.BORDER_CONSTANT,
         value=0
     )
-
-
     #normalize
     img = img / 255.0
     img = img.reshape(1, 784)
@@ -86,8 +84,15 @@ async def predict(payload: dict):
     Z3 = A2 @ W3 + b3
 
     probs = softmax(Z3)
+    print(int(np.argmax(probs)))
 
-    return {
-        "prediction": int(np.argmax(probs)),
-        "probabilities": probs[0].tolist()
-    }
+    if probs[int(np.argmax(probs))]> 75:
+        return {
+            "prediction": int(np.argmax(probs)),
+            "probabilities": probs[0].tolist()
+        }
+    else:
+        return{
+            "prediction": -1,
+            "probabilities": []
+        }

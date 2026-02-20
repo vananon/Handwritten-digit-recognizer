@@ -7,7 +7,7 @@ This project bridges **frontend engineering** (React + Figma design) with **neur
 ---
 
 ## Demo
-[Click here](PUT-YOUR-LINK-HERE)  
+[Click here](https://handwritten-digit-recognizer-kshz14bs1-vananons-projects.vercel.app/)  
 
 ---
 
