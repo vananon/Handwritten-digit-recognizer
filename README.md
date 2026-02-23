@@ -7,7 +7,7 @@ This project bridges **frontend engineering** (React + Figma design) with **neur
 ---
 
 ## Demo
-[Click here](https://handwritten-digit-recognizer-kshz14bs1-vananons-projects.vercel.app/)  
+[Click here](https://handwritten-digit-recognizer-delta.vercel.app/)  
 ######  Note: Since the backend is hosted on Render’s free instance, the service deployment may take 50 seconds or more to start after being inactive
 
 
