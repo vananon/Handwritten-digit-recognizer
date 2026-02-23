@@ -58,9 +58,9 @@ Canvas → Image Preprocessing → Backend → Neural Network → Prediction
 - Output layer: 10 neurons (digits 0–9)  
 
 **Training Details:**  
-- Learning rate: 0.005  
-- Epochs: 120  
-- Batch size: 128  
+- Learning rate: 0.003  
+- Epochs: 300  
+- Batch size: 64  
 - Optimizer: Mini-batch Gradient Descent  
 - Loss function: Cross-Entropy  
 - Activations: ReLU (hidden), Softmax (output)  
@@ -68,7 +68,9 @@ Canvas → Image Preprocessing → Backend → Neural Network → Prediction
 ---
 
 ## Results
-- Accuracy: ~95% on test set (from MNIST's dataset)  
+- Accuracy: ~97% on test set (from MNIST's dataset)  
+- ##### Note: Digit size should match the dataset images. So I created my own handwritten samples and stored them in the `digit_screenshots/` folder for testing.
+
 
 --- 
 

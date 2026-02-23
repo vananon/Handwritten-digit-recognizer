@@ -18,7 +18,7 @@ export default function App() {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = 'black';
-    ctx.lineWidth = 16;
+    ctx.lineWidth = 25;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
   }, []);
@@ -91,8 +91,7 @@ export default function App() {
   const predictDigit = async () => {
   const canvas = canvasRef.current!;
   const dataUrl = canvas.toDataURL("image/png");
-
-  const res = await fetch("https://handwritten-digit-recognizer-gtgb.onrender.com/predict", {
+  const res = await fetch("https://handwritten-digit-recognizer-gtgb.onrender.com/predict/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import matplotlib.pyplot as mp 
 import numpy as np
 import base64
 import cv2
@@ -84,9 +85,9 @@ async def predict(payload: dict):
     Z3 = A2 @ W3 + b3
 
     probs = softmax(Z3)
-    print(int(np.argmax(probs)))
-    print(probs[0], np.argmax(probs))
+
     return {
             "prediction": int(np.argmax(probs)),
             "probabilities": probs[0].tolist()
     }
+

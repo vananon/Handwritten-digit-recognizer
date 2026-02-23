@@ -1,4 +1,4 @@
-"""
+'''
 import numpy as np
 from urllib.request import urlretrieve
 import matplotlib.pyplot as ml
@@ -70,9 +70,9 @@ def cross_entropy(pred, y):
 
 #training
 
-LR = 0.005
-EPOCHS = 120
-BATCH = 128
+LR = 0.003
+EPOCHS = 300
+BATCH = 64
 
 for epoch in range(EPOCHS):
     idx = np.random.permutation(len(X_train))
@@ -123,9 +123,10 @@ for epoch in range(EPOCHS):
         b3-=LR * db3
 
     print(f"Epoch {epoch+1}/{EPOCHS}  Loss: {total_loss:.4f}")
+
 np.savez("model.npz", W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
 
-'''def accuracy(X, y):
+def accuracy(X, y):
     Z1 = X @ W1 + b1
     A1 = relu(Z1)
     Z2 = A1 @ W2 + b2
@@ -135,4 +136,4 @@ np.savez("model.npz", W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
     return np.mean(preds == y)
 
 print("Train acc:", accuracy(X_train, y_train))
-print("Test acc:", accuracy(X_test, y_test))"""
+print("Test acc:", accuracy(X_test, y_test))'''
