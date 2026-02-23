@@ -91,7 +91,7 @@ export default function App() {
   const predictDigit = async () => {
   const canvas = canvasRef.current!;
   const dataUrl = canvas.toDataURL("image/png");
-  const res = await fetch("https://handwritten-digit-recognizer-gtgb.onrender.com/predict/predict", {
+  const res = await fetch("https://handwritten-digit-recognizer-gtgb.onrender.com/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
