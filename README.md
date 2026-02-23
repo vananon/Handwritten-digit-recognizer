@@ -82,13 +82,28 @@ Clone the repository:
 git clone https://github.com/vananon/Handwritten-digit-recognizer
 cd Handwritten-digit-recognizer
 ```
-Run frontend 
-```bash
-npm run dev
-```
 
-Run backend
+
+
+Run backend:
 ```bash 
 cd backend
 uvicorn main:app --reload 
+```
+
+Run frontend
+
+
+Change the first line 94 in src/App.tsx (if the backend is running on the local host):
+```Typescript 
+  const res = await fetch("https://handwritten-digit-recognizer-gtgb.onrender.com/predict", ...
+```
+with: 
+```Typescript 
+  const res = await fetch("http://127.0.0.1:8000/predict", ...
+```
+
+Then: 
+```bash
+npm run dev
 ```
